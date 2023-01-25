@@ -1,17 +1,20 @@
-pipeline{
- agent{
-    label 'ansible'
- }
- stages('Hello') {
-   steps {
-     echo 'Hello World'
-   }
- }
+pipeline {
+    agent any
 
-  stages('Hello another stages') {
-    steps {
-      echo 'Hello from another stages'
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Hello another stages') {
+            steps {
+                echo 'Hello from another stages'
+            }
+        }
     }
-  }
-
+    
 }
+
+
+
